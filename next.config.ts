@@ -1,9 +1,10 @@
 import type { NextConfig } from "next";
+const isProd = process.env.NODE_ENV === "production";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
-  assetPrefix: process.env.NEXT_PUBLIC_ASSET_PREFIX || '',
+  basePath: isProd ? "/YesiaPlorina.github.io" : "",
+  assetPrefix: isProd ? "/YesiaPlorina.github.io/" : "",
   output: 'export',
   images: {
     unoptimized: true,
